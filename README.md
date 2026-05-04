@@ -31,7 +31,7 @@ Since the Rokid glasses run Android (not iOS), the private binder cannot be call
    - `stop(uuid:)`
    - `updateParam(rate:pitch:volume:)`
 
-2. **`TtsNetworkServer`** — `NWListener` TCP server on port **8082** that exposes the same interface over the network (JSON+newline), so any client (glasses companion app, automation tool) can drive TTS remotely:
+2. *(Glasses now connect automatically over Bluetooth — no TCP port needed.)*
 
 ```
 Client → Server:
@@ -81,3 +81,25 @@ No third-party dependencies:
 | `ITtsListener.onTtsStart/Stop` | `TtsClientListener.onUtteranceStart/Stop` |
 | No network server | TCP server on :8082 mirrors AIDL over network |
 | `minSdk 28`, glasses-only | iOS 16+, runs on iPhone |
+
+## SDK Setup
+
+The glasses now connect over **Bluetooth via the Rokid AI glasses SDK** — no Wi-Fi port or TCP server needed.
+
+The only thing left for each app is filling in the three credential constants (`kAppKey`, `kAppSecret`, `kAccessKey`) from [account.rokid.com/#/setting/prove](https://account.rokid.com/#/setting/prove), then running `pod install`.
+
+1. **Get credentials** at <https://account.rokid.com/#/setting/prove> and paste them into the glasses Swift file:
+   ```swift
+   private let kAppKey    = "YOUR_APP_KEY"
+   private let kAppSecret = "YOUR_APP_SECRET"
+   private let kAccessKey = "YOUR_ACCESS_KEY"
+   ```
+
+2. **Install CocoaPods dependencies** from the repo root:
+   ```bash
+   pod install
+   open *.xcworkspace   # always open the .xcworkspace, not .xcodeproj
+   ```
+
+3. *(Glasses now connect automatically over Bluetooth — no TCP port needed.)*
+
