@@ -62,7 +62,7 @@ Server → Client:
 
 ## Xcode Setup
 
-1. Open `RokidPrivateTtsKit.xcodeproj` in Xcode 15+
+1. Open `RokidPrivateTtsKit.xcworkspace` in Xcode 15+ (after running `pod install`) 15+
 2. Select your Team under **Signing & Capabilities**
 3. Build & run on iPhone (iOS 16+)
 
