@@ -1,5 +1,11 @@
 # Rokid Private TTS Kit iOS
 
+
+> **🔵 Connectivity Update — May 2025**
+> The glasses connection has been migrated from **raw TCP sockets** to
+> **Bluetooth via the Rokid AI glasses SDK** (`pod 'RokidSDK' ~> 1.10.2`).
+> No Wi-Fi port forwarding is needed. See **SDK Setup** below.
+
 iOS equivalent of the [Rokid Private TTS Kit](https://github.com/bzerk/rokid-private-tts-kit) Android library.
 
 ## What the Android library does
